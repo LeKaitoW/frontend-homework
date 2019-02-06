@@ -37,4 +37,10 @@ QUnit.module('Тестируем функцию minmax', function () {
 		assert.deepEqual(minmax('0.1abc -0.1def'), [ -0.1, 0.1 ]);
 		assert.deepEqual(minmax('15abc Infinitydef'), [ 15, Infinity ]);
 	});
+
+	QUnit.test('minmax обрабатывает не строки', function (assert) {
+		assert.deepEqual(minmax(123), [ undefined, undefined ]);
+		assert.deepEqual(minmax(NaN), [ undefined, undefined ]);
+		assert.deepEqual(minmax(undefined), [ undefined, undefined ]);
+	});
 });
