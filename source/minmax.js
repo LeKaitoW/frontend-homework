@@ -1,7 +1,7 @@
 'use strict';
 
-const minmax = function (string) {
-	var arr = string.split(' ').map(x => parseFloat(x)).filter(x => !isNaN(x));
+const minmax = string => {
+	let arr = string.split(' ').map(x => parseFloat(x)).filter(x => !Number.isNaN(x));
 	if (arr.length === 0) {
 		return [undefined, undefined];
 	}
