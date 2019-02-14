@@ -2,8 +2,8 @@
 
 QUnit.module('Тестируем функцию minmax', function () {
 	QUnit.test('minmax работает правильно на строках без чисел', function (assert) {
-		assert.deepEqual(minmax(''), [ undefined, undefined ], 'Особый случай, когда в строке нет чисел');
-		assert.deepEqual(minmax('мама мыла раму'), [ undefined, undefined ]);
+		assert.deepEqual(minmax(''), [ null, null ], 'Особый случай, когда в строке нет чисел');
+		assert.deepEqual(minmax('мама мыла раму'), [ null, null ]);
 	});
 
 	QUnit.test('minmax правильно парсит отдельные числа', function (assert) {
@@ -39,8 +39,8 @@ QUnit.module('Тестируем функцию minmax', function () {
 	});
 
 	QUnit.test('minmax обрабатывает не строки', function (assert) {
-		assert.deepEqual(minmax(123), [ undefined, undefined ]);
-		assert.deepEqual(minmax(NaN), [ undefined, undefined ]);
-		assert.deepEqual(minmax(undefined), [ undefined, undefined ]);
+		assert.deepEqual(minmax(123), [ null, null ]);
+		assert.deepEqual(minmax(NaN), [ null, null ]);
+		assert.deepEqual(minmax(null), [ null, null ]);
 	});
 });

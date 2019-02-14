@@ -2,7 +2,7 @@
 
 const minmax = string => {
 	if (typeof string !== 'string') {
-		return [undefined, undefined];
+		return [null, null];
 	}
 	let arr = string.split(" ").reduce((accumulator, curr) => {
 		if (!Number.isNaN(parseFloat(curr))) {
@@ -11,7 +11,7 @@ const minmax = string => {
 		return accumulator;
 	}, []);
 	if (arr.length === 0) {
-		return [undefined, undefined];
+		return [null, null];
 	}
 	return[Math.min(...arr), Math.max(...arr)];
 }
